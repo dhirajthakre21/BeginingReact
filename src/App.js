@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
+import Person from './Person/Person.js'
 
 function App() {
 		return (
     		<div className="App">
 		  		<h1> Hi there here is a React App !! </h1>
+				<Person />
     		</div>
 			
 			//React.createElement('div' , {ClassName : 'App'} , React.createElement('h1', null , 'Dhiraj here' ) ) 
@@ -12,7 +14,7 @@ function App() {
 			// the first parameter is tag , second is JavaScript object then there is a element !! 
   				
   				)
-			} ;
- 
+			};
+
 
 export default App;
