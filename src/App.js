@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+		return (
+    		<div className="App">
+		  		<h1> Hi there here is a React App !! </h1>
+    		</div>
+			
+			//React.createElement('div' , {ClassName : 'App'} , React.createElement('h1', null , 'Dhiraj here' ) ) 
+			//Here we have created element and returned to front page on calling function App . Which is default !!
+			// the first parameter is tag , second is JavaScript object then there is a element !! 
+  				
+  				)
+			} ;
+ 
 
 export default App;
