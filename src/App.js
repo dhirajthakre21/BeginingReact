@@ -61,7 +61,7 @@ const App = ()=> {
 			// pass this data to component 
 			// this refers to global object 
     		<div className="App">
-		  		<h1> Welcome to my Basic React App  !! </h1>
+		  		<h1 className='header'> Welcome to my Basic React App  !! </h1>
 						<p> </p>
 				<Button className='btn btn-danger btn-sm' onClick={switchNameHandler.bind( this , 'Akash Raut')} >Click here to change the name ! </Button>
 						<p> </p>
