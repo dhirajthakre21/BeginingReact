@@ -3,6 +3,9 @@ import './App.css';
 import Person from './Person/Person.js' ; 
 import Button from 'react-bootstrap/Button';
 
+//Hooks are used in functional component while states are used in class based component . 
+
+
 class App extends Component {
 	//The state object is where you store property values that belongs to the component
 		    //When the state object changes, the component re-renders .
@@ -14,13 +17,14 @@ class App extends Component {
 			
 						]
 		} 
-		switchNameHandler = () => 
-		{ 	if (this.state.persons[0].name==='Dhiraj' ) 
+		switchNameHandler(data) {
+			console.log(data)
+		   if (this.state.persons[0].name==='Dhiraj' ) 
 				{
 		 		this.setState      ({
 				persons : [
-							{ name : 'Amruta' , age : '14'} , 
-							{ name : 'Purva' , age : '15'} 
+							{ name : 'Amruta' , age : '10' } , 
+							{ name : data , age : '15'} 
 						  ]
 						            })
 				}
@@ -35,13 +39,15 @@ class App extends Component {
 			 	
 				}
 		}
+
+	   
 		render() {
 		return (
 			// pass this data to component 
 			// this refers to global object 
     		<div className="App">
 		  		<h1> Hi there here is a React App !! </h1>
-				<Button className='btn btn-danger btn-sm' onClick={this.switchNameHandler} >Click here </Button>
+				<Button className='btn btn-danger btn-sm' onClick={()=>this.switchNameHandler('Amruta')} >Click here </Button>
 				<Person name = {this.state.persons[0].name} age = {this.state.persons[0].age} /> 
 				<Person name = {this.state.persons[1].name} age = {this.state.persons[1].age} />
     		</div>
