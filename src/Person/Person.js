@@ -8,7 +8,7 @@ const Person = (data) => { // this are called as props also the argument simply 
 				return  (
 					<div>	
 					<p onClick={data.click} >   I'm a {data.name } and I'm {data.age} old </p>
-					<input type='text' onChange={data.changed }></input>
+					<input type='text' onChange={data.changed } ></input>
 					<p> </p>	
 					</div>
 		
@@ -18,7 +18,7 @@ const Person = (data) => { // this are called as props also the argument simply 
 		{
 			return( <div>	
 					<p onClick={data.click} >   I'm a {data.name } and I'm {data.age} old </p>
-					<input type='text' placeholder='Enter name to change 'onChange={data.changed }></input>
+					<input type='text' placeholder='Enter name to change 'onChange={data.changed } value={data.name} ></input>
 					<p> </p>	
 					</div>
 			

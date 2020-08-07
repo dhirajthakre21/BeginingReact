@@ -16,10 +16,42 @@ const App = ()=> {
 	const [personState , setPersonState]= useState ({ 
 		persons : [
 				{ name : 'Dhiraj Thakre' , age : '21'} , 
-				{ name : 'Sandesh Vanwadi' , age : '22'} ,
+				{ name : 'Sandesh Vanwadi' , age : '22'}  
+				
 			
 				  ]
+	
 	});
+	const [colorState , setColorState ]= useState ({
+		
+		colors : [
+			{
+				 color : '#FF69B4'
+				
+			}
+		]
+		
+	});
+	
+	const colorChanger =()=> 
+	{	if (colorState.colors[0].color==='#FF69B4') 
+			{
+			setColorState ({
+				colors : [
+						{color : '#00FF7F'}
+						 ] 
+							});
+			}
+		else {
+			setColorState ({
+				colors : [
+						{color : '#FF69B4' }
+						 ] 
+							});
+			
+		}
+		
+	}
 	
 	
 	const switchNameHandler = (data) =>
@@ -30,7 +62,10 @@ const App = ()=> {
 		 		setPersonState      ({
 				persons : [
 							{ name : data , age : '10' } , 
-							{ name : 'Shrikant Patil ' , age : '15'} 
+							{ name : 'Shrikant Patil ' , age : '15'} , 
+							{ color : '#FF69B4'}
+							
+					
 						  ]
 						            })
 				}
@@ -39,7 +74,9 @@ const App = ()=> {
 				setPersonState      ({
 				persons : [
 							{ name : 'Dhiraj Thakre' , age : '21'} , 
-							{ name : 'Sandesh Vanwadi' , age : '22'} ,
+							{ name : 'Sandesh Vanwadi' , age : '22'} , 
+							{ color : '#FF69B4'}
+							
 						  ]
 						            })
 			 	
@@ -50,22 +87,32 @@ const App = ()=> {
 				setPersonState      ({
 				persons : [
 							{ name : 'Dhiraj Thakre' , age : '21'} , 
-							{ name : event.target.value , age : '22'} 
+							{ name : event.target.value , age : '22'} , 
+							{ color : '#FF69B4'}
+							
 						  ]
 						            })
 			
 			
 		}
+		
 
-				return (
+		return (		
 			// pass this data to component 
 			// this refers to global object 
-    		<div className="App">
-		  		<h1 className='header'> Welcome to my Basic React App  !! </h1>
-						<p> </p>
-				<Button className='btn btn-danger btn-sm' onClick={switchNameHandler.bind( this , 'Akash Raut')} >Click here to change the name ! </Button>
-						<p> </p>
+    		<div style={{backgroundColor: colorState.colors[0].color }} 
+				className="App">
 				
+		  		<h1 className='header'> Welcome to my Basic React App  !! </h1>
+				
+				<p> </p>
+				<Button className='btn btn-danger btn-sm' 
+				onClick={switchNameHandler.bind( this , 'Akash Raut')} >Click here to change the name ! </Button>
+						<p> </p>
+				<button className='btn btn-warning btn-sm'
+					onClick={colorChanger}
+					> Click here to change the color </button>
+							
 				<Person
 					name = {personState.persons[0].name} 
 					age = {personState.persons[0].age}  
@@ -76,6 +123,7 @@ const App = ()=> {
 					age = {personState.persons[1].age} 
 					click= {switchNameHandler.bind(this , 'Sanket')}
 					changed={switchNameChanger}
+					
 					 />
 						
 				
