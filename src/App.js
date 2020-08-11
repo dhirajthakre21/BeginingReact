@@ -115,20 +115,10 @@ const App = ()=> {
 				}	
 			}
 	
+		let persons = null 	
+		if (showPersonState.showPerson ) {
+			persons= (
 			
-		
-
-		return (		
-			// pass this data to component 
-			// this refers to global object 
-			<div>
-				<div className='App'>
-					<Button className='btn btn-warning btn-sm' 
-					onClick={componentLoader}
-					> Switch ON and OFF the content </Button>
-				</div>
-				{ showPersonState.showPerson === true  ? // you can write javaScript expression inside the quatation mark . 
-					
 					<div style={{backgroundColor: colorState.colors[0].color }} 
 						className="App">
 
@@ -156,7 +146,24 @@ const App = ()=> {
 
 							 />
 
-						</div> : null  } 
+					</div> 
+			
+			
+			)  ; 
+		
+			
+		}
+
+		return (		
+			// pass this data to component 
+			// this refers to global object 
+			<div>
+				<div className='App'>
+					<Button className='btn btn-warning btn-sm' 
+					onClick={componentLoader}
+					> Switch ON and OFF the content </Button>
+				</div>
+				{persons}
 			</div>
 				)
 			
